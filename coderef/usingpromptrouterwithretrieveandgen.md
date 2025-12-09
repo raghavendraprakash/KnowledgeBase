@@ -103,10 +103,9 @@ print(f"Prompt Router ARN: {prompt_router_response['promptRouterArn']}")
 
 ## Key Points
 
-- Replace `modelArn` with `prompt_router_arn` in `knowledgeBaseConfiguration`[1][2]
-- Prompt Routers work with Anthropic Claude and Meta Llama model families[2]
-- Supports dynamic model selection based on response quality and cost optimization[2]
-- Knowledge Base handles retrieval; Prompt Router handles generation model selection[1]
-- Response includes citations linking back to source documents[3][1]
+- Replace `modelArn` with `prompt_router_arn` in `knowledgeBaseConfiguration`
+- Prompt Routers work with Anthropic Claude and Meta Llama model families
+- Supports dynamic model selection based on response quality and cost optimization
+- Knowledge Base handles retrieval; Prompt Router handles generation model selection
+- Response includes citations linking back to source documents
 
-This approach combines RAG capabilities with intelligent model routing for optimal quality/cost balance.[2]

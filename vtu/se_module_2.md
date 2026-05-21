@@ -42,7 +42,7 @@ At the end of this module, the student will be able to:
 
 ---
 
-## Bloomâs Taxonomy-Based Assessment Framework
+## Bloom's Taxonomy-Based Assessment Framework
 
 | Cognitive Level | Focus | Example Task |
 | :--- | :--- | :--- |

@@ -1,0 +1,79 @@
+@prefix :       <http://example.org/incident#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+# Ontology declaration
+<http://example.org/incident> a owl:Ontology ;
+    rdfs:label "Incident Response Management Ontology"@en .
+
+# Classes
+:Incident a owl:Class ;
+    rdfs:label "Incident"@en .
+
+:MalwareIncident a owl:Class ;
+    rdfs:subClassOf :Incident ;
+    rdfs:label "Malware Incident"@en .
+
+:PhishingIncident a owl:Class ;
+    rdfs:subClassOf :Incident ;
+    rdfs:label "Phishing Incident"@en .
+
+:Asset a owl:Class ;
+    rdfs:label "Asset"@en .
+
+:ThreatActor a owl:Class ;
+    rdfs:label "Threat Actor"@en .
+
+:Indicator a owl:Class ;
+    rdfs:label "Indicator"@en .
+
+:ResponseAction a owl:Class ;
+    rdfs:label "Response Action"@en .
+
+# Object Properties
+:hasAsset a owl:ObjectProperty ;
+    rdfs:label "has asset"@en ;
+    rdfs:domain :Incident ;
+    rdfs:range :Asset .
+
+:hasIndicator a owl:ObjectProperty ;
+    rdfs:domain :Incident ;
+    rdfs:range :Indicator .
+
+:performedBy a owl:ObjectProperty ;
+    rdfs:domain :Incident ;
+    rdfs:range :ThreatActor .
+
+:hasResponse a owl:ObjectProperty ;
+    rdfs:domain :Incident ;
+    rdfs:range :ResponseAction .
+
+# Datatype Properties
+:incidentID a owl:DatatypeProperty ;
+    rdfs:domain :Incident ;
+    rdfs:range xsd:string .
+
+:description a owl:DatatypeProperty ;
+    rdfs:domain :Incident ;
+    rdfs:range xsd:string .
+
+:timestamp a owl:DatatypeProperty ;
+    rdfs:domain :Incident ;
+    rdfs:range xsd:dateTime .
+
+:severity a owl:DatatypeProperty ;
+    rdfs:domain :Incident ;
+    rdfs:range xsd:integer .
+
+:actorName a owl:DatatypeProperty ;
+    rdfs:domain :ThreatActor ;
+    rdfs:range xsd:string .
+
+:indicatorValue a owl:DatatypeProperty ;
+    rdfs:domain :Indicator ;
+    rdfs:range xsd:string .
+
+:responseType a owl:DatatypeProperty ;
+    rdfs:domain :ResponseAction ;
+    rdfs:range xsd:string .
